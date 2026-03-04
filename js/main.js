@@ -14,17 +14,18 @@
     const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
 
     /* ===================================================
-       1. PRELOADER
+       1. CURTAIN INTRO / PRELOADER
        =================================================== */
     const preloader = qs('#preloader');
     if (preloader) {
         window.addEventListener('load', () => {
+            // Let the center content animate in first, then open curtains
             setTimeout(() => {
                 preloader.classList.add('loaded');
                 document.body.classList.add('loaded');
-                // Remove after transition
-                setTimeout(() => preloader.remove(), 900);
-            }, 600);
+                // Remove after curtain transition completes
+                setTimeout(() => preloader.remove(), 1800);
+            }, 1800);
         });
     }
 
