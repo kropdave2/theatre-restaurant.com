@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Theatre Restaurant — Italian & Czech Cuisine in Prague</title>
+    <meta name="description" content="A combination of Italian passion and Czech tradition. Restaurant in the heart of Prague, Rytířská 22.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Film Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text"><span>The Theatre</span></div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">The Theatre<span class="logo-dot"></span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+                <a href="menu.html" data-i18n="nav.menu">Menu</a>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+                <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="cs">CZ</button>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <a href="reservations.html" class="nav-cta" data-i18n="nav.book">Book a Table</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+        <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero-cin" id="hero">
+        <!-- Background -->
+        <div class="hero-cin-bg-wrap">
+            <div class="hero-cin-bg" id="heroCinBg" style="background-image: url('https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/10da3cb5-e94c-4bc4-a125-7e8a6ef0e000/DJI_20250313221331_0177_D+%281%29.JPG?format=2500w')"></div>
+            <div class="hero-cin-overlay"></div>
+        </div>
+
+        <!-- Main content — centered -->
+        <div class="hero-cin-content">
+            <div class="hero-cin-inner">
+                <div class="hero-cin-tag">
+                    <span class="hero-cin-tag-line"></span>
+                    <span data-i18n="hero.badge">Est. in Prague &mdash; Rytířská 22</span>
+                    <span class="hero-cin-tag-line"></span>
+                </div>
+
+                <h1 class="hero-cin-title">
+                    <span class="hero-cin-title-line hero-cin-title--sm"><span>The</span></span>
+                    <span class="hero-cin-title-line hero-cin-title--xl"><span>Theatre</span></span>
+                    <span class="hero-cin-title-line hero-cin-title--md"><span>Restaurant</span></span>
+                </h1>
+
+                <p class="hero-cin-subtitle" data-i18n="hero.subtitle">&ldquo;A combination of Italian passion and Czech tradition&rdquo;</p>
+
+                <div class="hero-cin-actions">
+                    <a href="reservations.html" class="btn btn-primary" data-i18n="hero.reserve">Reserve a Table</a>
+                    <a href="menu.html" class="btn btn-outline" data-i18n="hero.viewMenu">View Menu</a>
+                </div>
+
+                <div class="hero-cin-meta">
+                    <div class="hero-cin-meta-item">
+                        <i class="fa-regular fa-clock"></i>
+                        <span data-i18n="hero.hours">Mon&ndash;Sun: 09:00 &ndash; 23:00</span>
+                    </div>
+                    <div class="hero-cin-meta-sep"></div>
+                    <div class="hero-cin-meta-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Rytířská 22, Praha 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-cin-scroll">
+            <div class="scroll-line-wrap"><div class="scroll-line-inner"></div></div>
+        </div>
+    </section>
+
+    <!-- ==================== MARQUEE ==================== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item"><span class="marquee-dot"></span> Wood-Fired Pizza</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Farm-Fresh from Vysočina</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Italian & Czech Cuisine</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Rytířská 22, Prague</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Farmářská TEČKA Brand</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Open Daily 09–23</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Wood-Fired Pizza</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Farm-Fresh from Vysočina</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Italian & Czech Cuisine</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Rytířská 22, Prague</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Farmářská TEČKA Brand</div>
+            <div class="marquee-item"><span class="marquee-dot"></span> Open Daily 09–23</div>
+        </div>
+    </div>
+
+    <!-- ==================== EXPERIENCE NUMBERS ==================== -->
+    <section class="numbers-section">
+        <div class="container">
+            <div class="numbers-grid">
+                <div class="number-item" data-reveal="up">
+                    <div class="number-top">
+                        <span class="number-value" data-count="100">0</span>
+                        <span class="number-suffix">+</span>
+                    </div>
+                    <span class="number-label" data-i18n="numbers.dishes">Dishes on Menu</span>
+                </div>
+                <div class="number-item" data-reveal="up">
+                    <div class="number-top">
+                        <span class="number-value" data-count="7">0</span>
+                        <span class="number-suffix">/7</span>
+                    </div>
+                    <span class="number-label" data-i18n="numbers.days">Days Open Weekly</span>
+                </div>
+                <div class="number-item" data-reveal="up">
+                    <div class="number-top">
+                        <span class="number-value" data-count="14">0</span>
+                        <span class="number-suffix">h</span>
+                    </div>
+                    <span class="number-label" data-i18n="numbers.hours">Open Daily Hours</span>
+                </div>
+                <div class="number-item" data-reveal="up">
+                    <div class="number-top">
+                        <span class="number-value" data-count="1">0</span>
+                        <span class="number-suffix">♥</span>
+                    </div>
+                    <span class="number-label" data-i18n="numbers.passion">Passion for Quality</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDITORIAL ABOUT ==================== -->
+    <section class="section editorial" id="about">
+        <div class="container">
+            <div class="editorial-layout">
+                <div class="editorial-images">
+                    <div class="editorial-img editorial-img--1" data-reveal="scale">
+                        <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/31e2a18d-aaa5-4aea-b0bf-c4d9b74e3cf2/WhatsApp+Image+2025-11-28+at+12.40.47+PM.jpeg?format=1000w" alt="The Theatre Restaurant interior" loading="lazy">
+                    </div>
+                    <div class="editorial-img editorial-img--2" data-reveal="scale">
+                        <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/2cbe00eb-f51b-4e20-ba0b-ef319ad68e1a/WhatsApp+Image+2025-11-28+at+12.40.47+PM+%284%29.jpeg?format=750w" alt="Restaurant ambiance" loading="lazy">
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="editorial-badge">
+                        <div class="editorial-badge-inner">
+                            <span class="editorial-badge-icon">✦</span>
+                            <span class="editorial-badge-text" data-i18n="about.badge">Italian<br>& Czech</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-content" data-reveal="left">
+                    <div class="section-tag" data-i18n="about.tag">Our Story</div>
+                    <h2 class="section-title" data-i18n="about.title">Where Italian Passion Meets <em>Czech Tradition</em></h2>
+                    <blockquote class="editorial-quote">
+                        <span>"</span>
+                        <p data-i18n="about.quote">Every dish tells a story of passion, quality ingredients, and masterful preparation.</p>
+                    </blockquote>
+                    <p class="editorial-text" data-i18n="about.text1">Located in the heart of Prague on Rytířská 22, The Theatre Restaurant brings together the finest of Italian culinary artistry and beloved Czech gastronomic traditions.</p>
+                    <p class="editorial-text" data-i18n="about.text2">Locally Raised Meat with Care and Tradition — we believe that great food starts with great ingredients sourced with respect for nature and local heritage.</p>
+                    <div class="editorial-features">
+                        <div class="editorial-feat">
+                            <div class="editorial-feat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                            <div>
+                                <strong data-i18n="about.feature1.title">Farm Fresh</strong>
+                                <span data-i18n="about.feature1.text">Ingredients from Vysočina</span>
+                            </div>
+                        </div>
+                        <div class="editorial-feat">
+                            <div class="editorial-feat-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                            <div>
+                                <strong data-i18n="about.feature2.title">Wood-Fired</strong>
+                                <span data-i18n="about.feature2.text">Authentic pizza oven</span>
+                            </div>
+                        </div>
+                        <div class="editorial-feat">
+                            <div class="editorial-feat-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                            <div>
+                                <strong data-i18n="about.feature3.title">Fine Dining</strong>
+                                <span data-i18n="about.feature3.text">Elegant atmosphere</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FARM / VYSOČINA ==================== -->
+    <section class="farm-section">
+        <div class="farm-bg" style="background-image: url('https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/357dfa46-0c1a-457e-b28d-58ac3c4186ce/Vysocina.jpg?format=2500w')"></div>
+        <div class="farm-overlay"></div>
+        <div class="container farm-content">
+            <div class="farm-text" data-reveal="up">
+                <div class="section-tag section-tag--light" data-i18n="farm.tag">Our Source</div>
+                <h2 class="section-title" style="color: var(--clr-white);" data-i18n="farm.title">Farm-Fresh Quality from <em>Vysočina</em></h2>
+                <p data-i18n="farm.text1">In the heart of the Czech Republic, in the very center of Vysočina, you'll find a place that truly matters to us. Here, people, nature, and animals exist in harmony. We carefully respect the cycle of life and make full use of all available resources.</p>
+                <p data-i18n="farm.text2">We work with respect and reverence for nature. Products under the Farmářská TEČKA brand meet the highest standards of both ingredients and craftsmanship. It's as if your grandmother made the pâté at home, your mother roasted the meat, and your uncle brought wine from the cellar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOD SHOWCASE (Horizontal Scroll) ==================== -->
+    <section class="showcase-section">
+        <div class="showcase-header" data-reveal="up">
+            <div class="section-tag section-tag--center" data-i18n="showcase.tag">Taste & Discover</div>
+            <h2 class="section-title section-title--center" data-i18n="showcase.title">Our <em>Signature</em> Flavors</h2>
+        </div>
+        <div class="showcase-scroll">
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/7682d4be-b193-4813-a214-3af2c6ad6e8d/IMG_0100.jpg?format=750w" alt="Soup" loading="lazy">
+                <div class="showcase-card-label">
+                    <span data-i18n="showcase.soups">Soups</span>
+                    <small data-i18n="showcase.soupsSub">Homemade daily</small>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/0f1508d6-5ca4-42c0-a19f-3ad8b4301cb6/IMG_0261.jpg?format=750w" alt="Pasta" loading="lazy">
+                <div class="showcase-card-label">
+                    <span data-i18n="showcase.pasta">Pasta</span>
+                    <small data-i18n="showcase.pastaSub">Fresh & traditional</small>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/1aa6b6f0-b0f4-4caf-b5cb-23c4ff048c53/IMG_0264.jpg?format=750w" alt="Pizza" loading="lazy">
+                <div class="showcase-card-label">
+                    <span>Pizza</span>
+                    <small data-i18n="showcase.pizzaSub">Wood-fired perfection</small>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/35ded135-2a44-442d-bc94-c3c1431b59f2/IMG_0313.jpg?format=750w" alt="Fish" loading="lazy">
+                <div class="showcase-card-label">
+                    <span data-i18n="showcase.fish">Fish & Seafood</span>
+                    <small data-i18n="showcase.fishSub">Ocean to table</small>
+                </div>
+            </div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/7682d4be-b193-4813-a214-3af2c6ad6e8d/IMG_0100.jpg?format=750w" alt="Soup" loading="lazy">
+                <div class="showcase-card-label">
+                    <span data-i18n="showcase.soups">Soups</span>
+                    <small data-i18n="showcase.soupsSub">Homemade daily</small>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/0f1508d6-5ca4-42c0-a19f-3ad8b4301cb6/IMG_0261.jpg?format=750w" alt="Pasta" loading="lazy">
+                <div class="showcase-card-label">
+                    <span data-i18n="showcase.pasta">Pasta</span>
+                    <small data-i18n="showcase.pastaSub">Fresh & traditional</small>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/1aa6b6f0-b0f4-4caf-b5cb-23c4ff048c53/IMG_0264.jpg?format=750w" alt="Pizza" loading="lazy">
+                <div class="showcase-card-label">
+                    <span>Pizza</span>
+                    <small data-i18n="showcase.pizzaSub">Wood-fired perfection</small>
+                </div>
+            </div>
+            <div class="showcase-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/35ded135-2a44-442d-bc94-c3c1431b59f2/IMG_0313.jpg?format=750w" alt="Fish" loading="lazy">
+                <div class="showcase-card-label">
+                    <span data-i18n="showcase.fish">Fish & Seafood</span>
+                    <small data-i18n="showcase.fishSub">Ocean to table</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner" data-reveal="up">
+        <div class="cta-glow"></div>
+        <div class="container">
+            <h2 class="cta-title" data-i18n="cta.title">Ready for an <em>Unforgettable</em> Evening?</h2>
+            <p class="cta-sub" data-i18n="cta.sub">Experience the perfect blend of Italian craft and Czech soul</p>
+            <div class="cta-actions">
+                <a href="reservations.html" class="btn btn-primary magnetic-wrap" data-i18n="cta.reserve">Reserve a Table</a>
+                <a href="menu.html" class="btn btn-outline magnetic-wrap" data-i18n="cta.menu">Explore the Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3 class="footer-logo-text">The Theatre<span class="logo-dot"></span></h3>
+                    <p class="footer-tagline" data-i18n="footer.tagline">A combination of Italian passion and Czech tradition</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.navigation">Navigation</h4>
+                    <div class="footer-link-list">
+                        <a href="index.html" data-i18n="nav.home">Home</a>
+                        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+                        <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+                        <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+                        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.contactUs">Contact Us</h4>
+                    <div class="footer-contact-text">
+                        <p>Rytířská 22, 110 00<br>Staré Město, Praha 1</p>
+                        <p><a href="tel:+420211154427">(+420) 211 154 427</a></p>
+                        <p><a href="mailto:reservations@theatre-restaurant.com">reservations@theatre-restaurant.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.followUs">Follow Us</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/the_theatre_trattoria/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tripadvisor.com/Restaurant_Review-g274707-d27938620-Reviews-The_Theatre_Trattoria_Restaurant-Prague_Bohemia.html" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Theatre Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

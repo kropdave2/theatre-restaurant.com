@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu — The Theatre Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="grain"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <div id="preloader">
+        <div class="preloader-text"><span>Menu</span></div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">The Theatre<span class="logo-dot"></span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="menu.html" class="active" data-i18n="nav.menu">Menu</a>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+                <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="cs">CZ</button>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <a href="reservations.html" class="nav-cta" data-i18n="nav.book">Book a Table</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+        <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image: url('https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/0f1508d6-5ca4-42c0-a19f-3ad8b4301cb6/IMG_0261.jpg?format=2500w')"></div>
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-line"></span>
+                <span data-i18n="menu.badge">Taste & Discover</span>
+                <span class="hero-badge-line"></span>
+            </div>
+            <h1 class="page-hero-title" data-i18n="menu.hero.title">Our Menu</h1>
+            <p class="page-hero-sub" data-i18n="menu.hero.sub">A culinary journey through Italian and Czech flavors</p>
+        </div>
+    </section>
+
+    <!-- ==================== MENU CONTENT ==================== -->
+    <section class="menu-page section">
+        <!-- Sticky Category Nav -->
+        <div class="menu-cat-nav" id="menuCatNav">
+            <div class="menu-cat-nav-inner">
+                <a href="#soup" class="menu-cat-link active" data-i18n="menu.cat.soup">Soups</a>
+                <a href="#appetizers" class="menu-cat-link" data-i18n="menu.cat.appetizers">Appetizers</a>
+                <a href="#salads" class="menu-cat-link" data-i18n="menu.cat.salads">Salads</a>
+                <a href="#pasta" class="menu-cat-link" data-i18n="menu.cat.pasta">Pasta</a>
+                <a href="#pizza" class="menu-cat-link" data-i18n="menu.cat.pizza">Pizza</a>
+                <a href="#fish" class="menu-cat-link" data-i18n="menu.cat.fish">Fish</a>
+                <a href="#mains" class="menu-cat-link" data-i18n="menu.cat.mains">Main Courses</a>
+                <a href="#sides" class="menu-cat-link" data-i18n="menu.cat.sides">Side Dishes</a>
+                <a href="#czech" class="menu-cat-link" data-i18n="menu.cat.czech">Czech Kitchen</a>
+                <a href="#desserts" class="menu-cat-link" data-i18n="menu.cat.desserts">Desserts</a>
+                <a href="#breakfast" class="menu-cat-link" data-i18n="menu.cat.breakfast">Breakfast</a>
+            </div>
+        </div>
+
+        <div class="container menu-container">
+
+            <!-- ===== SOUPS ===== -->
+            <div class="menu-category" id="soup" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">01</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.soup">Soups</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.soup.item1.name">Soup of the Day</h3>
+                            <p class="menu-item-desc" data-i18n="menu.soup.item1.desc">homemade daily special</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">105 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.soup.item2.name">Tomato Soup</h3>
+                            <p class="menu-item-desc" data-i18n="menu.soup.item2.desc">basil, Parmigiano Reggiano</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">115 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.soup.item3.name">Garlic Cream Soup</h3>
+                            <p class="menu-item-desc" data-i18n="menu.soup.item3.desc">croutons</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">105 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== APPETIZERS ===== -->
+            <div class="menu-category" id="appetizers" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">02</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.appetizers">Appetizers</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.app.item1.name">Bruschetta al Pomodoro</h3>
+                            <p class="menu-item-desc" data-i18n="menu.app.item1.desc">fresh tomatoes, basil, garlic, extra virgin olive oil</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">165 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.app.item2.name">Vitello Tonnato</h3>
+                            <p class="menu-item-desc" data-i18n="menu.app.item2.desc">thinly sliced veal, tuna cream, capers, rocket</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">265 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.app.item3.name">Burrata</h3>
+                            <p class="menu-item-desc" data-i18n="menu.app.item3.desc">creamy Italian cheese, Prosciutto di Parma, tomatoes, basil pesto</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">295 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.app.item4.name">Carpaccio di Manzo</h3>
+                            <p class="menu-item-desc" data-i18n="menu.app.item4.desc">thinly sliced beef, rocket, Parmigiano, truffle oil</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">295 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SALADS ===== -->
+            <div class="menu-category" id="salads" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">03</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.salads">Salads</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.salad.item1.name">Burrata Salad</h3>
+                            <p class="menu-item-desc" data-i18n="menu.salad.item1.desc">fresh burrata, cherry tomatoes, rocket, basil pesto, balsamic glaze, pine nuts</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">285 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.salad.item2.name">Caesar Salad</h3>
+                            <p class="menu-item-desc" data-i18n="menu.salad.item2.desc">romaine lettuce, grilled chicken, Parmigiano, croutons, Caesar dressing</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">265 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PASTA ===== -->
+            <div class="menu-category" id="pasta" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">04</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.pasta">Pasta</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-subcols">
+                    <div class="menu-subcol">
+                        <div class="menu-items-list">
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item1.name">Spaghetti Aglio e Olio</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item1.desc">garlic, chilli, extra virgin olive oil, parsley</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">225 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item2.name">Spaghetti Carbonara</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item2.desc">guanciale, egg yolk, Pecorino Romano, black pepper</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">265 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item3.name">Spaghetti alle Vongole</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item3.desc">clams, white wine, garlic, parsley</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">295 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item4.name">Penne all'Arrabbiata</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item4.desc">spicy tomato sauce, garlic, chilli</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">225 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-subcol">
+                        <div class="menu-items-list">
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item5.name">Tagliatelle al Ragù</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item5.desc">slow-cooked Bolognese meat sauce, Parmigiano</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">265 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item6.name">Tagliatelle al Tartufo</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item6.desc">cream sauce, black truffle, Parmigiano</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">365 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item7.name">Gnocchi Quattro Formaggi</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item7.desc">Gorgonzola, Parmigiano, Pecorino, mozzarella</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">265 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pasta.item8.name">Risotto ai Funghi Porcini</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pasta.item8.desc">porcini mushrooms, Parmigiano, white wine</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">295 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PIZZA ===== -->
+            <div class="menu-category" id="pizza" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">05</span>
+                    <h2 class="menu-cat-title">Pizza</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-subcols">
+                    <div class="menu-subcol">
+                        <div class="menu-items-list">
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item1.name">Margherita</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item1.desc">San Marzano tomato, fior di latte, basil</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">225 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item2.name">Prosciutto e Funghi</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item2.desc">tomato, mozzarella, ham, mushrooms</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">255 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item3.name">Diavola</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item3.desc">tomato, mozzarella, spicy salami, chilli</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">255 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item4.name">Quattro Formaggi</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item4.desc">mozzarella, Gorgonzola, Parmigiano, Pecorino</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">265 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-subcol">
+                        <div class="menu-items-list">
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item5.name">Tonno e Cipolla</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item5.desc">tomato, mozzarella, tuna, red onion</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">265 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item6.name">Prosciutto Crudo e Rucola</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item6.desc">mozzarella, Prosciutto di Parma, rocket, Parmigiano</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">285 Kč</span>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item7.name">Tartufo</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item7.desc">mozzarella, mushrooms, truffle cream, Parmigiano</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">295 Kč</span>
+                            </div>
+                            <div class="menu-item featured-item">
+                                <div class="menu-item-info">
+                                    <h3 class="menu-item-name" data-i18n="menu.pizza.item8.name">Bufalina</h3>
+                                    <p class="menu-item-desc" data-i18n="menu.pizza.item8.desc">San Marzano, buffalo mozzarella, cherry tomatoes, basil</p>
+                                </div>
+                                <span class="menu-item-dots"></span>
+                                <span class="menu-item-price">285 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== FISH & SEAFOOD ===== -->
+            <div class="menu-category" id="fish" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">06</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.fish">Fish & Seafood</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.fish.item1.name">Grilled Salmon</h3>
+                            <p class="menu-item-desc" data-i18n="menu.fish.item1.desc">lemon butter sauce, seasonal vegetables, potatoes</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">365 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.fish.item2.name">Branzino</h3>
+                            <p class="menu-item-desc" data-i18n="menu.fish.item2.desc">Mediterranean sea bass, herbs, olive oil, roasted potatoes</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">395 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.fish.item3.name">Seafood Risotto</h3>
+                            <p class="menu-item-desc" data-i18n="menu.fish.item3.desc">shrimp, mussels, calamari, white wine, cherry tomatoes</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">385 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== MAIN COURSES ===== -->
+            <div class="menu-category" id="mains" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">07</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.mains">Main Courses</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.main.item1.name">Chicken Milanese</h3>
+                            <p class="menu-item-desc" data-i18n="menu.main.item1.desc">breaded chicken breast, spaghetti, tomato sauce</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">295 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.main.item2.name">Saltimbocca alla Romana</h3>
+                            <p class="menu-item-desc" data-i18n="menu.main.item2.desc">veal escalope, Prosciutto, sage, white wine sauce</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">365 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.main.item3.name">Tagliata di Manzo</h3>
+                            <p class="menu-item-desc" data-i18n="menu.main.item3.desc">sliced grilled beef steak, rocket, Parmigiano, balsamic</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">455 Kč</span>
+                    </div>
+                    <div class="menu-item featured-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.main.item4.name">Beef Tenderloin</h3>
+                            <p class="menu-item-desc" data-i18n="menu.main.item4.desc">premium cut, red wine reduction, truffle mashed potatoes, grilled vegetables</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">650 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SIDE DISHES ===== -->
+            <div class="menu-category" id="sides" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">08</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.sides">Side Dishes</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list menu-items-compact">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.side.item1.name">French Fries</h3>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">85 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.side.item2.name">Grilled Vegetables</h3>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">95 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.side.item3.name">Mixed Salad</h3>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">85 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.side.item4.name">Roasted Potatoes</h3>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">85 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.side.item5.name">Truffle Fries</h3>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">125 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CZECH KITCHEN ===== -->
+            <div class="menu-category" id="czech" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">09</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.czech">Czech Kitchen</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.czech.item1.name">Svíčková na Smetaně</h3>
+                            <p class="menu-item-desc" data-i18n="menu.czech.item1.desc">marinated beef sirloin, creamy vegetable sauce, bread dumplings, cranberry</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">295 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.czech.item2.name">Vepřo-Knedlo-Zelo</h3>
+                            <p class="menu-item-desc" data-i18n="menu.czech.item2.desc">roasted pork, bread dumplings, stewed cabbage</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">285 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.czech.item3.name">Schnitzel</h3>
+                            <p class="menu-item-desc" data-i18n="menu.czech.item3.desc">breaded pork or chicken, potato salad</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">275 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.czech.item4.name">Beef Goulash</h3>
+                            <p class="menu-item-desc" data-i18n="menu.czech.item4.desc">traditional recipe, bread dumplings</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">275 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== DESSERTS ===== -->
+            <div class="menu-category" id="desserts" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">10</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.desserts">Desserts</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.dessert.item1.name">Tiramisu</h3>
+                            <p class="menu-item-desc" data-i18n="menu.dessert.item1.desc">classic Italian, mascarpone cream, espresso, cocoa</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">185 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.dessert.item2.name">Panna Cotta</h3>
+                            <p class="menu-item-desc" data-i18n="menu.dessert.item2.desc">vanilla cream, berry compote</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">165 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.dessert.item3.name">Chocolate Fondant</h3>
+                            <p class="menu-item-desc" data-i18n="menu.dessert.item3.desc">warm chocolate cake, liquid center, vanilla ice cream</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">195 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.dessert.item4.name">Affogato</h3>
+                            <p class="menu-item-desc" data-i18n="menu.dessert.item4.desc">vanilla gelato drowned in espresso</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">145 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== BREAKFAST ===== -->
+            <div class="menu-category" id="breakfast" data-reveal="up">
+                <div class="menu-cat-header">
+                    <span class="menu-cat-number">11</span>
+                    <h2 class="menu-cat-title" data-i18n="menu.cat.breakfast">Breakfast</h2>
+                    <div class="menu-cat-line"></div>
+                </div>
+                <p class="menu-cat-note" data-i18n="menu.breakfast.note">Served daily 09:00 – 11:30</p>
+                <div class="menu-items-list">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.breakfast.item1.name">Continental Breakfast</h3>
+                            <p class="menu-item-desc" data-i18n="menu.breakfast.item1.desc">croissant, butter, jam, coffee or tea, orange juice</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">195 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.breakfast.item2.name">English Breakfast</h3>
+                            <p class="menu-item-desc" data-i18n="menu.breakfast.item2.desc">eggs, bacon, sausages, toast, beans, grilled tomato, coffee or tea</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">295 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.breakfast.item3.name">Eggs Benedict</h3>
+                            <p class="menu-item-desc" data-i18n="menu.breakfast.item3.desc">poached eggs, hollandaise, English muffin, ham or salmon</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">245 Kč</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3 class="menu-item-name" data-i18n="menu.breakfast.item4.name">Avocado Toast</h3>
+                            <p class="menu-item-desc" data-i18n="menu.breakfast.item4.desc">sourdough bread, smashed avocado, poached egg, chilli flakes</p>
+                        </div>
+                        <span class="menu-item-dots"></span>
+                        <span class="menu-item-price">225 Kč</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- / .container -->
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner" data-reveal="up">
+        <div class="container">
+            <h2 class="cta-title" data-i18n="cta.menuReserve">Found Your <em>Favorite</em>?</h2>
+            <p class="cta-sub" data-i18n="cta.menuSub">Reserve a table and enjoy an unforgettable dining experience</p>
+            <div class="cta-actions">
+                <a href="reservations.html" class="btn btn-primary magnetic-wrap" data-i18n="cta.reserve">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3 class="footer-logo-text">The Theatre<span class="logo-dot"></span></h3>
+                    <p class="footer-tagline" data-i18n="footer.tagline">A combination of Italian passion and Czech tradition</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.navigation">Navigation</h4>
+                    <div class="footer-link-list">
+                        <a href="index.html" data-i18n="nav.home">Home</a>
+                        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+                        <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+                        <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+                        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.contactUs">Contact Us</h4>
+                    <div class="footer-contact-text">
+                        <p>Rytířská 22, 110 00<br>Staré Město, Praha 1</p>
+                        <p><a href="tel:+420211154427">(+420) 211 154 427</a></p>
+                        <p><a href="mailto:reservations@theatre-restaurant.com">reservations@theatre-restaurant.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.followUs">Follow Us</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/the_theatre_trattoria/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tripadvisor.com/Restaurant_Review-g274707-d27938620-Reviews-The_Theatre_Trattoria_Restaurant-Prague_Bohemia.html" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Theatre Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

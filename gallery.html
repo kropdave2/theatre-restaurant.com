@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — The Theatre Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="grain"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <div id="preloader">
+        <div class="preloader-text"><span>Gallery</span></div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">The Theatre<span class="logo-dot"></span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" data-i18n="nav.home">Home</a>
+                <a href="menu.html" data-i18n="nav.menu">Menu</a>
+                <a href="gallery.html" class="active" data-i18n="nav.gallery">Gallery</a>
+                <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+            </div>
+            <div class="nav-right">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="cs">CZ</button>
+                    <button class="lang-btn" data-lang="it">IT</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <a href="reservations.html" class="nav-cta" data-i18n="nav.book">Book a Table</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+        <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+        <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="page-hero">
+        <div class="page-hero-bg" style="background-image: url('https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/2cbe00eb-f51b-4e20-ba0b-ef319ad68e1a/WhatsApp+Image+2025-11-28+at+12.40.47+PM+%284%29.jpeg?format=2500w')"></div>
+        <div class="hero-overlay"></div>
+        <div class="page-hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-line"></span>
+                <span data-i18n="gallery.badge">Our Moments</span>
+                <span class="hero-badge-line"></span>
+            </div>
+            <h1 class="page-hero-title" data-i18n="gallery.hero.title">Gallery</h1>
+            <p class="page-hero-sub" data-i18n="gallery.hero.sub">A glimpse into the atmosphere of The Theatre</p>
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY MASONRY ==================== -->
+    <section class="gallery-page section">
+        <div class="container">
+            <div class="gallery-masonry">
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/31e2a18d-aaa5-4aea-b0bf-c4d9b74e3cf2/WhatsApp+Image+2025-11-28+at+12.40.47+PM.jpeg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/31e2a18d-aaa5-4aea-b0bf-c4d9b74e3cf2/WhatsApp+Image+2025-11-28+at+12.40.47+PM.jpeg?format=750w" alt="Restaurant interior" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/2cbe00eb-f51b-4e20-ba0b-ef319ad68e1a/WhatsApp+Image+2025-11-28+at+12.40.47+PM+%284%29.jpeg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/2cbe00eb-f51b-4e20-ba0b-ef319ad68e1a/WhatsApp+Image+2025-11-28+at+12.40.47+PM+%284%29.jpeg?format=750w" alt="Restaurant ambiance" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/7682d4be-b193-4813-a214-3af2c6ad6e8d/IMG_0100.jpg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/7682d4be-b193-4813-a214-3af2c6ad6e8d/IMG_0100.jpg?format=750w" alt="Soup" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/0f1508d6-5ca4-42c0-a19f-3ad8b4301cb6/IMG_0261.jpg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/0f1508d6-5ca4-42c0-a19f-3ad8b4301cb6/IMG_0261.jpg?format=750w" alt="Pasta dish" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/1aa6b6f0-b0f4-4caf-b5cb-23c4ff048c53/IMG_0264.jpg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/1aa6b6f0-b0f4-4caf-b5cb-23c4ff048c53/IMG_0264.jpg?format=750w" alt="Pizza" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/35ded135-2a44-442d-bc94-c3c1431b59f2/IMG_0313.jpg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/35ded135-2a44-442d-bc94-c3c1431b59f2/IMG_0313.jpg?format=750w" alt="Fish dish" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/10da3cb5-e94c-4bc4-a125-7e8a6ef0e000/DJI_20250313221331_0177_D+%281%29.JPG?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/10da3cb5-e94c-4bc4-a125-7e8a6ef0e000/DJI_20250313221331_0177_D+%281%29.JPG?format=750w" alt="Aerial view" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+                <a href="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/357dfa46-0c1a-457e-b28d-58ac3c4186ce/Vysocina.jpg?format=2500w" class="gallery-item" data-reveal="scale">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/357dfa46-0c1a-457e-b28d-58ac3c4186ce/Vysocina.jpg?format=750w" alt="Vysočina farm" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LIGHTBOX ==================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-image-wrap">
+            <img class="lightbox-img" id="lightboxImg" src="" alt="">
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="cta-banner" data-reveal="up">
+        <div class="container">
+            <h2 class="cta-title" data-i18n="cta.galleryTitle">Want to <em>Experience</em> It Yourself?</h2>
+            <p class="cta-sub" data-i18n="cta.gallerySub">Join us for an unforgettable dining experience in the heart of Prague</p>
+            <div class="cta-actions">
+                <a href="reservations.html" class="btn btn-primary magnetic-wrap" data-i18n="cta.reserve">Reserve a Table</a>
+                <a href="menu.html" class="btn btn-outline magnetic-wrap" data-i18n="cta.menu">Explore the Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3 class="footer-logo-text">The Theatre<span class="logo-dot"></span></h3>
+                    <p class="footer-tagline" data-i18n="footer.tagline">A combination of Italian passion and Czech tradition</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.navigation">Navigation</h4>
+                    <div class="footer-link-list">
+                        <a href="index.html" data-i18n="nav.home">Home</a>
+                        <a href="menu.html" data-i18n="nav.menu">Menu</a>
+                        <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+                        <a href="reservations.html" data-i18n="nav.reservations">Reservations</a>
+                        <a href="contact.html" data-i18n="nav.contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.contactUs">Contact Us</h4>
+                    <div class="footer-contact-text">
+                        <p>Rytířská 22, 110 00<br>Staré Město, Praha 1</p>
+                        <p><a href="tel:+420211154427">(+420) 211 154 427</a></p>
+                        <p><a href="mailto:reservations@theatre-restaurant.com">reservations@theatre-restaurant.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading" data-i18n="footer.followUs">Follow Us</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/the_theatre_trattoria/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tripadvisor.com/Restaurant_Review-g274707-d27938620-Reviews-The_Theatre_Trattoria_Restaurant-Prague_Bohemia.html" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Theatre Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
