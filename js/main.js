@@ -18,15 +18,23 @@
        =================================================== */
     const preloader = qs('#preloader');
     if (preloader) {
-        window.addEventListener('load', () => {
-            // Let the center content animate in first, then open curtains
-            setTimeout(() => {
-                preloader.classList.add('loaded');
-                document.body.classList.add('loaded');
-                // Remove after curtain transition completes
-                setTimeout(() => preloader.remove(), 1800);
-            }, 1800);
-        });
+        const alreadySeen = sessionStorage.getItem('curtainSeen');
+        if (alreadySeen) {
+            // Skip animation — remove immediately, mark body as loaded
+            preloader.remove();
+            document.body.classList.add('loaded');
+        } else {
+            window.addEventListener('load', () => {
+                // Let the center content animate in first, then open curtains
+                setTimeout(() => {
+                    preloader.classList.add('loaded');
+                    document.body.classList.add('loaded');
+                    sessionStorage.setItem('curtainSeen', '1');
+                    // Remove after curtain transition completes
+                    setTimeout(() => preloader.remove(), 1800);
+                }, 1800);
+            });
+        }
     }
 
     /* ===================================================
