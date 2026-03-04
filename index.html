@@ -52,6 +52,7 @@
                     <button class="lang-btn" data-lang="cs">CZ</button>
                     <button class="lang-btn" data-lang="it">IT</button>
                     <button class="lang-btn" data-lang="de">DE</button>
+                    <button class="lang-btn" data-lang="ru">RU</button>
                 </div>
                 <a href="reservations.html" class="nav-cta" data-i18n="nav.book">Book a Table</a>
                 <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -71,51 +72,64 @@
     </div>
 
     <!-- ==================== HERO ==================== -->
-    <section class="hero-cin" id="hero">
-        <!-- Background -->
-        <div class="hero-cin-bg-wrap">
-            <div class="hero-cin-bg" id="heroCinBg" style="background-image: url('https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/10da3cb5-e94c-4bc4-a125-7e8a6ef0e000/DJI_20250313221331_0177_D+%281%29.JPG?format=2500w')"></div>
-            <div class="hero-cin-overlay"></div>
+    <section class="hero-stage" id="hero">
+        <div class="hero-stage-bg">
+            <div class="hero-stage-gradient"></div>
         </div>
 
-        <!-- Main content — centered -->
-        <div class="hero-cin-content">
-            <div class="hero-cin-inner">
-                <div class="hero-cin-tag">
-                    <span class="hero-cin-tag-line"></span>
-                    <span data-i18n="hero.badge">Est. in Prague &mdash; Rytířská 22</span>
-                    <span class="hero-cin-tag-line"></span>
+        <div class="hero-stage-inner">
+            <!-- Left: Content -->
+            <div class="hero-stage-content">
+                <div class="hero-stage-tag">
+                    <span class="tag-accent-line"></span>
+                    <span data-i18n="hero.badge">Est. in Prague</span>
+                    <span class="tag-accent-line"></span>
                 </div>
 
-                <h1 class="hero-cin-title">
-                    <span class="hero-cin-title-line hero-cin-title--sm"><span>The</span></span>
-                    <span class="hero-cin-title-line hero-cin-title--xl"><span>Theatre</span></span>
-                    <span class="hero-cin-title-line hero-cin-title--md"><span>Restaurant</span></span>
+                <h1 class="hero-stage-title">
+                    <span class="hst-line hst-the"><span>The</span></span>
+                    <span class="hst-line hst-main"><span>Theatre</span></span>
+                    <span class="hst-line hst-rest"><span>Restaurant</span></span>
                 </h1>
 
-                <p class="hero-cin-subtitle" data-i18n="hero.subtitle">&ldquo;A combination of Italian passion and Czech tradition&rdquo;</p>
+                <div class="hero-stage-divider">
+                    <span class="hsd-line"></span>
+                    <span class="hsd-diamond">&#9670;</span>
+                    <span class="hsd-line"></span>
+                </div>
 
-                <div class="hero-cin-actions">
+                <p class="hero-stage-subtitle" data-i18n="hero.subtitle">&ldquo;A combination of Italian passion and Czech tradition&rdquo;</p>
+
+                <div class="hero-stage-actions">
                     <a href="reservations.html" class="btn btn-primary" data-i18n="hero.reserve">Reserve a Table</a>
                     <a href="menu.html" class="btn btn-outline" data-i18n="hero.viewMenu">View Menu</a>
                 </div>
 
-                <div class="hero-cin-meta">
-                    <div class="hero-cin-meta-item">
+                <div class="hero-stage-meta">
+                    <div class="hsm-item">
                         <i class="fa-regular fa-clock"></i>
                         <span data-i18n="hero.hours">Mon&ndash;Sun: 09:00 &ndash; 23:00</span>
                     </div>
-                    <div class="hero-cin-meta-sep"></div>
-                    <div class="hero-cin-meta-item">
+                    <div class="hsm-sep"></div>
+                    <div class="hsm-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>Rytířská 22, Praha 1</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Right: Image in arch frame -->
+            <div class="hero-stage-visual">
+                <div class="hero-stage-frame">
+                    <img src="https://images.squarespace-cdn.com/content/v1/67d8b73ece40840cde478d43/10da3cb5-e94c-4bc4-a125-7e8a6ef0e000/DJI_20250313221331_0177_D+%281%29.JPG?format=1500w" alt="The Theatre Restaurant" class="hero-stage-img" loading="eager">
+                    <div class="hero-stage-frame-glow"></div>
+                </div>
+                <div class="hero-stage-frame-accent"></div>
+            </div>
         </div>
 
         <!-- Scroll indicator -->
-        <div class="hero-cin-scroll">
+        <div class="hero-stage-scroll">
             <div class="scroll-line-wrap"><div class="scroll-line-inner"></div></div>
         </div>
     </section>

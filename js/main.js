@@ -162,7 +162,7 @@
        6. HERO TITLE REVEAL ANIMATION (Cinematic)
        =================================================== */
     function initHeroReveal() {
-        const titleLines = qsa('.hero-cin-title-line');
+        const titleLines = qsa('.hst-line');
         if (!titleLines.length) return;
 
         setTimeout(() => {
@@ -170,37 +170,26 @@
                 setTimeout(() => line.classList.add('visible'), i * 250);
             });
         }, 800);
-
-        // Tag
-        const tag = qs('.hero-cin-tag');
-        if (tag) {
-            setTimeout(() => {
-                tag.style.opacity = '1';
-                tag.style.transform = 'translateY(0)';
-            }, 600);
-        }
-
-        // Actions
-        const actions = qs('.hero-cin-actions');
-        if (actions) {
-            setTimeout(() => {
-                actions.style.opacity = '1';
-                actions.style.transform = 'translateY(0)';
-            }, 1600);
-        }
     }
 
     /* ===================================================
        6b. HERO MOUSE PARALLAX
        =================================================== */
     function initHeroParallax() {
-        const bg = qs('#heroCinBg');
-        if (!bg || !window.matchMedia('(pointer: fine)').matches) return;
+        const frame = qs('.hero-stage-frame');
+        const img = qs('.hero-stage-img');
+        if (!frame || !img || !window.matchMedia('(pointer: fine)').matches) return;
 
-        document.addEventListener('mousemove', e => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-            const y = (e.clientY / window.innerHeight - 0.5) * 20;
-            bg.style.transform = `translate(${-x}px, ${-y}px) scale(1.08)`;
+        frame.addEventListener('mousemove', e => {
+            const rect = frame.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            img.style.transform = `translate(${-x * 10}px, ${-y * 10}px) scale(1.08)`;
+        });
+        frame.addEventListener('mouseleave', () => {
+            img.style.transform = 'scale(1.05)';
+            img.style.transition = 'transform 0.8s ease';
+            setTimeout(() => { img.style.transition = 'transform 12s ease'; }, 800);
         });
     }
 
